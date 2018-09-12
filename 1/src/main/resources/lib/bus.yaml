@@ -1,0 +1,6 @@
+type: object
+properties:
+  metadata:
+    type: array
+    items:
+      enum: [ac, multi-axle, reading-light, sleeper]

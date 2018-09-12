@@ -1,0 +1,18 @@
+metaQuery:
+  queryParameters:
+    color: string
+    brand-name: string
+
+paginationParameters:
+  queryParameters:
+    begin-index?:
+      type: integer
+      description: Result position to start with
+      default: 1
+      minimum: 1
+    max-elements?:
+      type: integer
+      description: Maximum number of items in the response
+      default: 50
+      maximum: 500
+      minimum: 10

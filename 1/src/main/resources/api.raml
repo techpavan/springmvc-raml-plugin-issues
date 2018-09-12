@@ -1,0 +1,20 @@
+#%RAML 1.0
+title: RamlTest
+version: v1
+description: |
+  Testing issues.
+#baseUri: http://localhost
+types:
+  Bus: !include lib/bus.yaml
+
+traits: !include lib/traits.yaml
+
+/bus:
+  get:
+    is: [metaQuery, paginationParameters]
+    description: Get a bus.
+    responses:
+      200:
+        body:
+          application/json:
+            type: Bus
