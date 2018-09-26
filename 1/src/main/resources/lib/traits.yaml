@@ -16,3 +16,19 @@ paginationParameters:
       default: 50
       maximum: 500
       minimum: 10
+
+listStringsWithFilterSupport:
+  queryParameters:
+    filter:
+      type: string
+      description: Wildcard filter to apply
+      required: false
+  responses:
+    200:
+      body:
+        application/json:
+          example: |
+            {values: ["string1", "string2"]}
+
+listAllBrands:
+  is: [listStringsWithFilterSupport]

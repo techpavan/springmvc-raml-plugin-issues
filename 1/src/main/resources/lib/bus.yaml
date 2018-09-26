@@ -4,3 +4,5 @@ properties:
     type: array
     items:
       enum: [ac, multi-axle, reading-light, sleeper]
+  brand:
+    enum: [Volvo, Scania]

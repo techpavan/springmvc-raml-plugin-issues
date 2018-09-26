@@ -6,6 +6,7 @@ description: |
 #baseUri: http://localhost
 types:
   Bus: !include lib/bus.yaml
+  Car: !include lib/car.yaml
 
 traits: !include lib/traits.yaml
 
@@ -13,8 +14,35 @@ traits: !include lib/traits.yaml
   get:
     is: [metaQuery, paginationParameters]
     description: Get a bus.
+    queryParameters:
+      brandN:
+        type: string
+        enum: [Volvo, Scania]
     responses:
       200:
         body:
           application/json:
             type: Bus
+
+  /brands:
+    get:
+      is: [listAllBrands]
+      description: Get all bus brands
+
+/car:
+  get:
+    description: Get a car.
+    queryParameters:
+      brandN:
+        type: string
+        enum: [BMW, Audi]
+    responses:
+      200:
+        body:
+          application/json:
+            type: Car
+
+  /brands:
+    get:
+      is: [listStringsWithFilterSupport]
+      description: Get all car brands
