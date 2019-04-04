@@ -1,0 +1,28 @@
+#%RAML 1.0
+title: MessageServer
+
+types:
+  Email:
+    type: object
+    properties:
+      subject: string
+      body: string
+  Sms:
+    type: object
+    properties:
+      content: string
+
+/messages:
+  post:
+    body:
+      application/json:
+        type: Email
+      applicationV2/json:
+        type: Sms
+    responses:
+      200:
+        body:
+          application/json:
+            type: Email
+          applicationV2/json:
+            type: Sms
